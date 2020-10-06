@@ -1,15 +1,27 @@
-def correct_answers():
-    correct_list = ['A', 'C', 'A', 'A', 'D', 'B', 'C', 'A', 'C', 'B',
-                    'A', 'D', 'C', 'A', 'D', 'C', 'B', 'B', 'D', 'A']
+
+
+def read_candidate_answers():
+    outfile=open('answers.txt','r')
+    answer_list=outfile.read().split()
+    return answer_list
+
+def read_correct_answer():
+    file=open('correct.txt', 'r')
+    correct_list=file.read().split()
     return correct_list
 
+#def correct_answers():
+ #   correct_list = ['A', 'C', 'A', 'A', 'D', 'B', 'C', 'A', 'C', 'B',
+  #                  'A', 'D', 'C', 'A', 'D', 'C', 'B', 'B', 'D', 'A']
+   # return correct_list
 
-def open_answer():
-    answer_list = []
-    for i in range(0, 20):
-        ele = input()
-        answer_list.append(ele)
-    return answer_list
+
+#def open_answer():
+ #   answer_list = []
+  #  for i in range(0, 20):
+   #     ele = input()
+    #    answer_list.append(ele)
+    #return answer_list
 
 
 def check(correct_list, answers_list):
@@ -33,8 +45,8 @@ def check(correct_list, answers_list):
 
 
 def main():
-    correct_list = correct_answers()
-    answers_list = open_answer()
+    correct_list = read_correct_answer()
+    answers_list = read_candidate_answers()
     check(correct_list, answers_list)
 
 
