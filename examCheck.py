@@ -5,7 +5,7 @@ def read_candidate_answers():
     answer_list=outfile.read().split()
     return answer_list
 
-def read_correct_answer():
+def read_correct_answers():
     file=open('correct.txt', 'r')
     correct_list=file.read().split()
     return correct_list
@@ -45,7 +45,7 @@ def check(correct_list, answers_list):
 
 
 def main():
-    correct_list = read_correct_answer()
+    correct_list = read_correct_answers()
     answers_list = read_candidate_answers()
     check(correct_list, answers_list)
 
